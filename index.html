@@ -1,0 +1,407 @@
+<!--
+  Transaction Authority Group (TAG) — Lead Gen Landing Page
+  Client: Jennifer Cortes
+
+  QUICK CONFIG (edit in one place)
+  - Open `script.js` and paste:
+    - FOOTER_EMAIL
+    - PRIVACY_URL
+    - TERMS_URL
+
+  SCHEDULER EMBED
+  - This page uses the official Calendly inline embed in the Booking section.
+  - To change the booking link, update the `data-url` in the Booking section (search: calendly-inline-widget).
+
+  DOMAIN / DNS (brief)
+  - Point your domain to your hosting provider (Netlify/Vercel/Cloudflare Pages/S3):
+    - Apex/root: A/ALIAS as required by host
+    - www: CNAME to host target
+  - Enable HTTPS and redirect `www` <-> apex consistently.
+
+  BRAND ASSET
+  - Drop the TAG mark at: `/assets/logo.png` (symbol-only logo)
+  - Optional full logo w/ text: `/assets/logo_text.png` (used in footer)
+  - Update colors in `styles.css` under `:root { --navy: ... }`
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Transaction Authority Group is a national infrastructure designed to help transaction coordinators and TC companies scale with systems, standards, and operational support." />
+  <title>Transaction Authority Group (TAG) — Discovery Call</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://transactionauthority.com/" />
+  <meta property="og:title" content="Transaction Authority Group - Built for TCs Ready to Scale" />
+  <meta property="og:description"
+    content="National infrastructure designed to help transaction coordinators and TC companies scale with systems, standards, and operational support." />
+  <meta property="og:image" content="https://transactionauthority.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Transaction Authority Group" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Transaction Authority Group - Built for TCs Ready to Scale" />
+  <meta name="twitter:description"
+    content="National infrastructure designed to help transaction coordinators and TC companies scale with systems, standards, and operational support." />
+  <meta name="twitter:image" content="https://transactionauthority.com/assets/og-image.png" />
+
+  <!-- Google Fonts: Inter (body) + Outfit (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Calendly widget styles -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Inline icon sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"
+    focusable="false">
+    <symbol id="icon-doc" viewBox="0 0 24 24">
+      <path d="M7 7h10M7 12h10M7 17h7M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7l-4 2V6a2 2 0 0 1 2-2Z" fill="none"
+        stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24">
+      <path d="M12 21s7-4.5 7-11V6l-7-3-7 3v4c0 6.5 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M9.5 12l1.8 1.8 3.8-3.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-trend" viewBox="0 0 24 24">
+      <path d="M4 18V8m0 10h16M8 14l3-3 3 2 4-5" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M12 21s7-4.5 7-10a7 7 0 1 0-14 0c0 5.5 7 10 7 10Z" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="12" cy="11" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+    </symbol>
+    <symbol id="icon-sliders" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      <circle cx="9" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <circle cx="15" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <circle cx="11" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.6" />
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </symbol>
+    <symbol id="icon-x" viewBox="0 0 24 24">
+      <path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </symbol>
+  </svg>
+
+  <main id="main">
+    <!-- 1) HERO -->
+    <header class="section hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow">Transaction Authority Group</p>
+          <p class="kicker">Nationwide Transaction Coordination Infrastructure</p>
+          <h1 id="hero-title">Built for Transaction Coordinators Ready to Scale</h1>
+          <p class="subhead">
+            Transaction Authority Group is a national infrastructure designed to help transaction coordinators and TC
+            companies scale with systems, standards, and operational support.
+          </p>
+
+          <ul class="bullets bullets--authority" aria-label="Authority points">
+            <li>Structured like a brokerage</li>
+            <li>Built on standardized systems</li>
+            <li>Designed for scalable TC operations</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="button button--primary" href="#book">
+              Book a Discovery Call
+            </a>
+          </div>
+
+          <p class="micro-qual">
+            For established TCs / TC companies only. Discovery calls are for fit, not training.
+          </p>
+
+          <a class="text-link" href="#fit">See if TAG is a fit</a>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero-crest" aria-hidden="true">
+            <img class="tag-mark tag-mark--hero" src="assets/logo.png" alt="" loading="eager" decoding="async" />
+          </div>
+          <div class="hero-panel" aria-hidden="true">
+            <p class="hero-panel__eyebrow">TAG Infrastructure</p>
+            <div class="hero-panel__list" role="presentation">
+              <div class="hero-panel__item">
+                <svg class="hero-panel__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-doc"></use>
+                </svg>
+                <span class="hero-panel__text">Operational Infrastructure</span>
+              </div>
+              <div class="hero-panel__item">
+                <svg class="hero-panel__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-shield-check"></use>
+                </svg>
+                <span class="hero-panel__text">Nationwide Standards</span>
+              </div>
+              <div class="hero-panel__item">
+                <svg class="hero-panel__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-trend"></use>
+                </svg>
+                <span class="hero-panel__text">Support for Growth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2) SOCIAL PROOF / AUTHORITY SIGNAL -->
+    <section class="authority" aria-label="Authority signals">
+      <div class="container authority__inner">
+        <div class="authority__item">
+          <svg class="authority__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="#icon-shield-check"></use>
+          </svg>
+          <p class="authority__label">Trusted</p>
+          <p class="authority__value">Trusted by transaction coordinators operating nationwide</p>
+        </div>
+        <div class="authority__item">
+          <svg class="authority__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="#icon-pin"></use>
+          </svg>
+          <p class="authority__label">Coverage</p>
+          <p class="authority__value">Supporting TC businesses across multiple states</p>
+        </div>
+        <div class="authority__item">
+          <svg class="authority__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <use href="#icon-sliders"></use>
+          </svg>
+          <p class="authority__label">Built by Operators</p>
+          <p class="authority__value">Built by operators, not influencers</p>
+        </div>
+        <div class="authority__item authority__item--stat" hidden>
+          <p class="authority__label">Scale</p>
+          <p class="authority__value">
+            <!-- Optional stat slot: replace and remove `hidden` on this element -->
+            <strong>XX+</strong> transactions supported monthly
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) THE PROBLEM -->
+    <section class="section section--ruled animate-on-scroll" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <p class="section-eyebrow">The Problem</p>
+        <h2 id="problem-title">Why Most Transaction Coordinators Hit a Ceiling</h2>
+        <ul class="bullets bullets--spacious">
+          <li>You’re buried in files and admin work</li>
+          <li>Scaling means more chaos, not more freedom</li>
+          <li>Systems live in your head, not your business</li>
+          <li>You’re the bottleneck to your own growth</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4) THE TAG SOLUTION -->
+    <section class="section section--ruled animate-on-scroll" id="solution" aria-labelledby="solution-title">
+      <div class="container">
+        <p class="section-eyebrow">The Solution</p>
+        <h2 id="solution-title">How TAG Helps You Scale</h2>
+        <div class="cards animate-stagger" role="list">
+          <article class="card" role="listitem">
+            <div class="card__top">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="#icon-doc"></use>
+              </svg>
+              <h3>Operational Infrastructure</h3>
+            </div>
+            <p>Standardized systems and support so you can scale without breaking.</p>
+          </article>
+          <article class="card" role="listitem">
+            <div class="card__top">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="#icon-shield-check"></use>
+              </svg>
+              <h3>Nationwide Standards</h3>
+            </div>
+            <p>Consistency across transactions, states, and team members.</p>
+          </article>
+          <article class="card" role="listitem">
+            <div class="card__top">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="#icon-trend"></use>
+              </svg>
+              <h3>Support for Growth</h3>
+            </div>
+            <p>Operational friction removed so you focus on leadership, not paperwork.</p>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a class="button button--primary" href="#book">
+            Book a Discovery Call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) WHO IT’S FOR / NOT FOR -->
+    <section class="section section--ruled animate-on-scroll" id="fit" aria-labelledby="fit-title">
+      <div class="container">
+        <p class="section-eyebrow">Fit &amp; Filter</p>
+        <h2 id="fit-title">Fit &amp; Filter</h2>
+        <p class="gate-intro">
+          This is designed for operators already at capacity. If that’s not you, it won’t be a fit.
+        </p>
+        <div class="split">
+          <div class="panel panel--positive" aria-labelledby="for-title">
+            <h3 id="for-title">TAG Is For</h3>
+            <ul class="bullets bullets--check">
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-check"></use>
+                </svg>
+                Solo TCs at capacity
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-check"></use>
+                </svg>
+                TC companies ready to grow
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-check"></use>
+                </svg>
+                Operators who value structure
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-check"></use>
+                </svg>
+                Professionals who want scale without burnout
+              </li>
+            </ul>
+          </div>
+          <div class="panel panel--negative" aria-labelledby="notfor-title">
+            <h3 id="notfor-title">TAG Is Not For</h3>
+            <ul class="bullets bullets--cross">
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-x"></use>
+                </svg>
+                Brand-new TCs
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-x"></use>
+                </svg>
+                People looking for "quick money"
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-x"></use>
+                </svg>
+                Anyone resisting systems or accountability
+              </li>
+              <li>
+                <svg class="bullet-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="#icon-x"></use>
+                </svg>
+                DIY operators who don't want structure
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) WHAT HAPPENS ON THE DISCOVERY CALL -->
+    <section class="section section--ruled animate-on-scroll" id="expect" aria-labelledby="expect-title">
+      <div class="container">
+        <p class="section-eyebrow">The Call</p>
+        <h2 id="expect-title">What to Expect on the Call</h2>
+        <ul class="bullets">
+          <li>Review your current TC operation</li>
+          <li>Identify bottlenecks limiting scale</li>
+          <li>Determine if TAG is a fit</li>
+          <li>If aligned, outline next steps</li>
+        </ul>
+        <p class="subtext">No pressure. No obligation.</p>
+        <div class="section-cta">
+          <a class="button button--primary" href="#book">
+            Book a Discovery Call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) BOOKING SECTION -->
+    <section class="section book animate-on-scroll" id="book" aria-labelledby="book-title">
+      <div class="container">
+        <div class="book__head book__head--centered">
+          <p class="section-eyebrow">Schedule Your Call</p>
+          <h2 id="book-title">Book a Discovery Call</h2>
+          <p class="book__lead">
+            Select a time that works for you. This is a short, focused call to confirm fit and determine next steps.
+          </p>
+        </div>
+
+        <div class="book__embed-centered" aria-label="Scheduler">
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget"
+            data-url="https://calendly.com/transactionauthority-info/30min?hide_event_type_details=1&hide_gdpr_banner=1"
+            style="min-width:320px;height:705px;"></div>
+          <!-- Calendly inline widget end -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) FOOTER -->
+    <footer class="footer" aria-label="Footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img class="tag-mark tag-mark--footer" src="assets/logo_text.png" alt="Transaction Authority Group"
+            loading="lazy" decoding="async" />
+          <div>
+            <p class="footer__tagline">Nationwide Transaction Coordination Infrastructure</p>
+          </div>
+        </div>
+
+        <div class="footer__links" aria-label="Footer links">
+          <a href="#" data-email-link>Contact: <span data-email-text>PASTE_HERE</span></a>
+          <a href="privacy.html" data-privacy-link>Privacy Policy</a>
+          <a href="terms.html" data-terms-link>Terms</a>
+        </div>
+
+        <p class="footer__credit">Site by <a href="https://multimedium.dev" target="_blank"
+            rel="noopener noreferrer">Multimedium</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <a class="sticky-cta" href="#book">Book a Discovery Call</a>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
