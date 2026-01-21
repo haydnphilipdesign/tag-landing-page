@@ -6,27 +6,27 @@
 */
 
 :root {
-  --navy: #0b1f3b;
-  --navy-2: #0f2a4c;
-  --ink: #0b1220;
-  --muted: #5b6678;
-  --line: rgba(11, 18, 32, 0.12);
-  --bg: #ffffff;
-  --bg-2: #f6f8fc;
-  --card: #ffffff;
+  --navy: #1F2A33;
+  --navy-2: #2A3640;
+  --ink: #1F2A33;
+  --muted: #5A6570;
+  --line: rgba(31, 42, 51, 0.12);
+  --bg: #F6F5F2;
+  --bg-2: #EEEDEA;
+  --card: #FFFFFF;
   --focus: #1b4fd6;
   --danger-tint: rgba(167, 36, 36, 0.06);
   --danger-line: rgba(167, 36, 36, 0.22);
 
-  /* Brand Gold Accent */
-  --gold: #C4A35A;
-  --gold-light: #D4B86A;
-  --gold-dark: #A8893E;
+  /* Brand Gold Accent — Muted Metallic Gold / Warm Brass */
+  --gold: #B49A6A;
+  --gold-light: #C4AA7A;
+  --gold-dark: #9A835A;
 
   --radius: 16px;
-  --shadow: 0 18px 45px rgba(11, 18, 32, 0.14);
-  --shadow-soft: 0 10px 28px rgba(11, 18, 32, 0.08);
-  --shadow-glow: 0 8px 32px rgba(196, 163, 90, 0.25);
+  --shadow: 0 18px 45px rgba(31, 42, 51, 0.14);
+  --shadow-soft: 0 10px 28px rgba(31, 42, 51, 0.08);
+  --shadow-glow: 0 8px 32px rgba(180, 154, 106, 0.25);
 
   --container: 1120px;
   --gutter: 20px;
@@ -72,12 +72,12 @@ body {
 
 a {
   color: inherit;
-  text-decoration-color: rgba(11, 18, 32, 0.35);
+  text-decoration-color: rgba(31, 42, 51, 0.35);
   text-underline-offset: 0.18em;
 }
 
 a:hover {
-  text-decoration-color: rgba(11, 18, 32, 0.6);
+  text-decoration-color: rgba(31, 42, 51, 0.6);
 }
 
 :focus-visible {
@@ -346,13 +346,13 @@ h3 {
     radial-gradient(500px 320px at 72% 35%, rgba(11, 31, 59, 0.08), transparent 62%),
     radial-gradient(420px 280px at 78% 75%, rgba(27, 79, 214, 0.06), transparent 58%),
     repeating-linear-gradient(90deg,
-      rgba(11, 18, 32, 0.03) 0,
-      rgba(11, 18, 32, 0.03) 1px,
+      rgba(31, 42, 51, 0.03) 0,
+      rgba(31, 42, 51, 0.03) 1px,
       transparent 1px,
       transparent 28px),
     repeating-linear-gradient(0deg,
-      rgba(11, 18, 32, 0.028) 0,
-      rgba(11, 18, 32, 0.028) 1px,
+      rgba(31, 42, 51, 0.028) 0,
+      rgba(31, 42, 51, 0.028) 1px,
       transparent 1px,
       transparent 28px);
   opacity: 0.9;
@@ -467,7 +467,7 @@ h3 {
 
 .button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(11, 18, 32, 0.12);
+  box-shadow: 0 14px 30px rgba(31, 42, 51, 0.12);
 }
 
 .button:active {
@@ -781,7 +781,7 @@ h3 {
 
 .footer__credit a:hover {
   color: var(--ink);
-  text-decoration-color: rgba(11, 18, 32, 0.5);
+  text-decoration-color: rgba(31, 42, 51, 0.5);
 }
 
 @media (min-width: 900px) {
