@@ -140,4 +140,41 @@ Built with care by your developer. For questions or updates, reach out!
 
 ---
 
+---
+
+## 📊 Vercel Web Analytics
+
+This project includes Vercel Web Analytics tracking to monitor visitor behavior and page views.
+
+### Setup
+
+1. **Enable Web Analytics in Vercel Dashboard**
+   - Go to your [Vercel dashboard](/dashboard)
+   - Select your project
+   - Click the **Analytics** tab
+   - Click **Enable** in the dialog
+   - Note: This adds new routes scoped at `/_vercel/insights/*` after your next deployment
+
+2. **View Your Data**
+   - After deployment, visit your site and navigate through pages
+   - Data will appear in the Analytics dashboard after a few minutes
+   - Check your browser's Network tab for requests to `/_vercel/insights/view` to confirm tracking is working
+
+### How It Works
+
+The analytics tracking is implemented using a simple inline script in the `<head>` section of `index.html`:
+
+```html
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+This captures page views and visitor information automatically—no additional configuration needed.
+
+### Note
+
+When deployed to Vercel, the `/_vercel/insights/script.js` endpoint becomes available and handles all tracking. If testing locally or on other hosts, you may see 404s for this script, which is normal and expected.
+
 *Last updated: January 2026*
